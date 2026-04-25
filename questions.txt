@@ -1,0 +1,15 @@
+What does #!/bin/bash represent in a bash script?|A) A comment|B) variable|C) Shebang|D) A loop|C
+Which command is used to dispay text in bash?|A) print|B) echo|C) Display|D) write|B
+How do you assign a value to a variable in bash?|A) var = value|B) var=value|C) var=vat|D) var:value|B
+How do you acceess the value of a variable?|A) var|B) #var|C) $var|D) @var|C
+Which symbol is used to comment a single line in bash?|A) //|B) >>|C) #|D) **|C
+What does the read command do?|A) Writes output|B) Reads user input|C) Deletes files|D) Loops through data|B
+Which loop is used when the number of iterations is known?|A) while|B) untill|C) For|D) Select|C
+What is the correct syntax for an if statement?|A) if (condition)|B) if [condition] then|C) if {condition}|D) if condition do|B
+Which operator is used for numeric equality comparison?|A) ==|B) =|C) -eq|D) !=|C
+What does $? represent?|A) Last variable used|B) Exit status of last command|C) Number of arguments|D) Processed ID|B
+How dou you make a script executable?|A) chmod +x script.sh|B) execute script.sh|C) Bash +x script.s.|D)  script.sh|A
+What does $1 represent?|A) Script name|B) First argument passed to script|C) First variable declared|D) First line of the script|B
+Which command is used to terminate a script immediately?|A) Stop|B) Break|C) exit|D) End|C
+What does * represent in bash?|A) single character|B) All files or wildcards|C) Root directory|D) Comment|B
+What is the purpose for exit?|A) Restarts script|B) End script execution|C) Pause script|D) Skip command|B
