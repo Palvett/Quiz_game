@@ -1,13 +1,16 @@
 #!/bin/bash
 
 file="questions.txt"
-# Absolute file path for highscores
-high_scores_file="$(cd "$(dirname "$0")" && pwd)/high_scores.txt"
+
+# A better improved path for highscores file
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+highscores_file="$SCRIPT_DIR/highscores.txt"
+
 Questions=()
 
 #Handling command line arguments
 print_top_5() {
-    if [[ ! -f "$high_scores_file" || ! -s "$high_scores_file" ]]; then
+    if [[ ! -f "$highscores_file" || ! -s "$highscores_file" ]]; then
         echo "No high scores found yet."
         return
     fi
@@ -15,11 +18,9 @@ print_top_5() {
     echo "=======Top 5 Scores:======="
     echo "-----------------------------"
 
-    sort -t'|' -k5 -nr "$high_scores_file" | head -5 | \
-    awk -F'|' '{
-        printf "%-3d %-15s %-5s%% (%s/%s, wrong: %s) [%s]\n",
-        NR, $1, $5, $2, $4, $3, $6
-    }'
+    #'Sort' safety and ensures awk handles the format correctly 
+    sort -t'|' -k5 -nr "$highscores_file" 2>/dev/null | head -5 | \
+    awk -F'|' '{ printf "%-2d. %-15s %3d%% (%d/%d correct) [%s]\n", NR, $1, $5, $2, $4, $6 }'
     echo "-----------------------------------------------------------"
 }
 
@@ -99,7 +100,7 @@ fi
 
 echo "Welcome, $username!"
 
-sleep 5
+sleep 2
 
 # Initialize stats
 total_questions=${#Questions[@]}
