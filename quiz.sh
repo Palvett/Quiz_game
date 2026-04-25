@@ -162,7 +162,7 @@ echo "==== Quiz Over ===="
 echo "Questions Processed: $qnum"
 
 if [[ "$mode" == "normal" ]]; then
-    echo "$username|$score|$incorrect|$total_questions|$pct|$final_dt" >> "$high_scores_file"
+    echo "$username|$score|$incorrect|$total_questions|$pct|$final_dt" >> "$highscores_file"
 
     echo "Incorrect Answers: $incorrect"
     echo "Longest Streak: $longest_streak"
